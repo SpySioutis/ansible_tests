@@ -1,0 +1,17 @@
+---
+
+- hosts: all
+  become: true
+  tasks:
+    - name: install updates
+      tags: always
+      apt:
+        upgrade: dist
+        update_cache: yes
+
+    - name: copy default html file for site
+      copy:
+        src: default_site.html
+        dest: /var/www/html/index.html
+        owner: spiros
+        mode: 0644

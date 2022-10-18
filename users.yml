@@ -1,0 +1,14 @@
+---
+
+- hosts: all
+  become: true
+  tasks:
+
+    - name: create simone user
+      user:
+        name: simon
+
+    - name: add ssh key for simone
+      authorized_key:
+         user: simone
+         key: "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCvQgcnUp/m0X3Qv34nWsnFXOxJpPMOPe0oHC9YH07ySaXF6MTaoDI4ulmH1GYpuFF+swKGC7sQSA3ZAazF/LgpDZviiAVTMkNIeFgGqV5X1K+ipRJloy6LjM7kjTgnPtZOFgSTcKV4XigB5WQ1ny2ngH7GSQzbLXhwrqhTZ97DPT6lf1Z11Gt7PCImvpiA+UGn2RU4xac0OfjX8kveSWmIiZ28hFM9Hy0SMN5rKAOMeMpnO1OrchOpJDoim+54hSFYT0WUmGG5MvlkTlP6rYTbxO4Gq/jkPqzB97X599lDXagxEZqYJviHRCoWW274LdnJ1bMbuBmMchAXIeYcZou2upjx+MefWg9ra0b1bLPdGAX6zUOO3ViUbrdhoMvTHLzsomYHDlZPKW1Awj0Zls4hNbFah3jY0f7IvLBaLmy3GYF+PsF+bpngbGKdz4aIt7hP9xKLEHeSyoh0PqwaIhjKOKurT7TF3vgfwnMGi/vcVgYVgMaDCLB/vm5MRZne4VU= spiros@PC"

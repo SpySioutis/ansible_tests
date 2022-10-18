@@ -1,0 +1,11 @@
+- hosts: localhost
+  become: true
+
+  tasks:
+    - name: Install packages
+      apt:
+        name: 
+          - htop
+          - mc
+          - tmux
+        state: latest

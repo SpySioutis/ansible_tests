@@ -1,0 +1,23 @@
+---
+
+- hosts: all
+  tasks:
+    - name: install updates
+      become: true
+      tags: always
+      apt:
+        update_cache: yes
+        upgrade: dist
+
+    - name: create source directory
+      file: 
+        path: ./sources
+        state: directory
+
+    - name: create new_directory directory
+      file:
+        path: ./sources/new_directory
+        state: directory
+
+
+

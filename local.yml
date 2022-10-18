@@ -1,0 +1,16 @@
+- hosts: localhost
+  connection: local
+  become: true
+
+  pre_tasks:
+    - name: update repositories
+      apt: 
+        update_cache: yes
+      change_when: False
+
+
+  tasks:
+    - include: tasks/users.yml
+    - include: tasks/cron.yml  
+    - include: tasks/packages.yml
+
